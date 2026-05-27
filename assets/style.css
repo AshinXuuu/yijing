@@ -858,3 +858,391 @@ p { font-size: 16px; margin-bottom: 14px; }
 }
 .lead-list strong { color: var(--seal-red); font-weight: 500; }
 
+/* =====================================================
+   📱 移动端适配（手机／窄屏）
+   断点 720px：平板竖屏及以下
+   断点 380px：小屏手机
+   ===================================================== */
+@media (max-width: 720px) {
+
+  /* —— 整体容器 —— */
+  .container {
+    padding: 20px 16px 56px;
+  }
+
+  /* —— 顶部标题 —— */
+  .site-header { padding: 28px 0 20px; }
+  .title-cn {
+    font-size: 38px;
+    letter-spacing: 0.3em;
+    margin-left: 0.3em;
+  }
+  .title-en {
+    font-size: 11px;
+    letter-spacing: 0.35em;
+  }
+  .subtitle {
+    font-size: 13px;
+    letter-spacing: 0.2em;
+    margin-top: 14px;
+  }
+  .seal {
+    font-size: 14px;
+    padding: 5px 10px;
+    letter-spacing: 0.25em;
+    margin: 10px 4px;
+  }
+
+  /* —— 引导诗 —— */
+  .intro-poem {
+    font-size: 15px;
+    letter-spacing: 0.1em;
+    line-height: 2;
+    padding: 0 4px;
+  }
+
+  /* —— 进度行 —— */
+  .progress-row .label {
+    font-size: 13px;
+    letter-spacing: 0.2em;
+  }
+
+  /* —— 章节大标题 —— */
+  .section-title {
+    font-size: 22px;
+    margin: 40px 0 20px;
+    letter-spacing: 0.15em;
+  }
+  .section-title::before, .section-title::after {
+    width: 24px;
+    margin: 0 12px;
+  }
+  .section-intro {
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    margin-bottom: 28px;
+  }
+
+  /* —— Hero —— */
+  .hero { padding: 36px 0 24px; }
+  .hero-lesson {
+    font-size: 11px;
+    letter-spacing: 0.3em;
+  }
+  .hero-name {
+    font-size: 68px;
+    letter-spacing: 0.08em;
+    margin-left: 0.08em;
+  }
+  .hero-pin {
+    font-size: 13px;
+    letter-spacing: 0.3em;
+    margin-top: 10px;
+  }
+  .hero-meta {
+    gap: 14px;
+    row-gap: 8px;
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    margin-top: 24px;
+    padding: 0 8px;
+  }
+
+  /* —— 章节头 —— */
+  .chapter { margin: 40px 0; }
+  .chapter-head {
+    flex-wrap: wrap;
+    gap: 6px 12px;
+    align-items: baseline;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+  }
+  .chapter-head .ch-num { font-size: 22px; }
+  .chapter-head .ch-title {
+    font-size: 18px;
+    letter-spacing: 0.12em;
+  }
+  .chapter-head .ch-en {
+    width: 100%;
+    margin-left: 0;
+    order: 99;
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    opacity: 0.7;
+  }
+
+  /* —— 正文 —— */
+  p { font-size: 15px; line-height: 1.9; }
+  .lead-list {
+    font-size: 15px;
+    line-height: 1.95;
+  }
+
+  /* —— 内联引用 —— */
+  .inline-quote {
+    font-size: 14px;
+    letter-spacing: 0.08em;
+    padding: 10px 14px;
+    line-height: 1.85;
+  }
+
+  /* —— 原文卡 —— */
+  .classic-text {
+    font-size: 17px;
+    padding: 22px 18px;
+    line-height: 1.95;
+    letter-spacing: 0.1em;
+  }
+  .classic-text::before {
+    font-size: 32px;
+  }
+  .classic-text .source {
+    font-size: 12px;
+    letter-spacing: 0.2em;
+  }
+
+  /* —— Hero 的大卦象 —— */
+  .trigram.huge { gap: 10px; padding: 10px 0; }
+  .trigram.huge .yao { width: 140px; height: 16px; }
+  .trigram.large { gap: 8px; padding: 8px 0; }
+  .trigram.large .yao { width: 100px; height: 12px; }
+  .trigram .yao { width: 60px; height: 8px; }
+
+  /* —— 卦象示意 + 爻位说明 —— */
+  .symbol-explain { gap: 20px; }
+  .symbol-box { padding: 24px 16px; }
+  .symbol-box .name { font-size: 16px; }
+
+  /* —— 三才行：移动端依然横向 1 列，但内部三块各自一行 —— */
+  .tp-row {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding: 14px 16px;
+  }
+  .tp-row .tp-label {
+    font-size: 18px;
+    letter-spacing: 0.2em;
+  }
+  .tp-row .tp-sub {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+  }
+  .tp-row .tp-yao .yao { width: 90px; height: 10px; }
+  .tp-row .tp-text { font-size: 14px; line-height: 1.85; }
+
+  /* —— 六龙 —— */
+  .six-dragons { gap: 12px; }
+  .dragon-row { grid-template-columns: 1fr; }
+  .dragon-row .dr-pos {
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 16px;
+  }
+  .dragon-row .dr-pos .num { font-size: 16px; }
+  .dragon-row .dr-pos .layer {
+    margin-top: 0;
+    font-size: 10px;
+  }
+  .dragon-row .dr-body { padding: 14px 16px; }
+  .dragon-row .dr-yao {
+    font-size: 15px;
+    letter-spacing: 0.12em;
+    line-height: 1.7;
+    margin-bottom: 8px;
+  }
+  .dragon-row .dr-meaning {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+  .dragon-row .dr-story {
+    font-size: 13.5px;
+    line-height: 1.8;
+    padding: 8px 12px;
+  }
+
+  /* —— 注家卡 —— */
+  .commentary { gap: 14px; }
+  .commentary-card { padding: 18px 16px; }
+  .commentary-card .author {
+    font-size: 13px;
+    padding: 3px 12px;
+    letter-spacing: 0.15em;
+  }
+  .commentary-card .author small {
+    font-size: 10px;
+    margin-left: 6px;
+  }
+  .commentary-card .quote {
+    font-size: 14px;
+    padding: 9px 14px;
+    letter-spacing: 0.08em;
+    line-height: 1.8;
+  }
+  .commentary-card p {
+    font-size: 14.5px;
+    line-height: 1.85;
+  }
+
+  /* —— 故事 —— */
+  .story { padding: 24px 18px; }
+  .story::before, .story::after {
+    width: 18px; height: 18px;
+  }
+  .story h4 {
+    font-size: 18px;
+    letter-spacing: 0.15em;
+  }
+  .story .era {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    margin-bottom: 16px;
+  }
+  .story p {
+    font-size: 14.5px;
+    line-height: 1.9;
+    text-indent: 2em;
+    margin-bottom: 12px;
+  }
+  .story .moral {
+    font-size: 14.5px;
+    line-height: 1.85;
+    letter-spacing: 0.1em;
+  }
+
+  /* —— 致用列表 —— */
+  .application ul { gap: 10px; }
+  .application li {
+    font-size: 14px;
+    padding: 12px 14px;
+    line-height: 1.8;
+  }
+
+  /* —— 速查表 —— */
+  .attr-table { font-size: 14px; }
+  .attr-table th, .attr-table td {
+    padding: 10px 12px;
+    line-height: 1.7;
+  }
+  .attr-table th {
+    width: 32%;
+    letter-spacing: 0.15em;
+  }
+
+  /* —— 反观 —— */
+  .reflection { padding: 24px 18px; }
+  .reflection .q {
+    font-size: 16px;
+    letter-spacing: 0.15em;
+    line-height: 1.95;
+    margin-bottom: 16px;
+  }
+  .reflection .a {
+    font-size: 12px;
+    letter-spacing: 0.15em;
+  }
+
+  /* —— 八卦卡片 —— */
+  .bagua-grid { gap: 10px; }
+  .bagua-card { padding: 18px 10px; }
+  .bagua-card .lesson-num { font-size: 10px; }
+  .bagua-card .name {
+    font-size: 18px;
+    letter-spacing: 0.2em;
+  }
+  .bagua-card .nature {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+  }
+  .bagua-card.current::after,
+  .bagua-card.done::after {
+    width: 20px; height: 20px;
+    line-height: 20px;
+    font-size: 12px;
+    top: -8px; right: -8px;
+  }
+
+  /* —— 六十四卦九宫 —— */
+  .hex-grid { gap: 4px; }
+  .hex-cell { padding: 3px; }
+  .hex-cell .h-num { font-size: 9px; }
+  .hex-cell .h-symbol { font-size: 18px; margin: 2px 0; }
+  .hex-cell .h-name {
+    font-size: 10px;
+    letter-spacing: 0.05em;
+  }
+
+  /* —— 研习之法卡片 —— */
+  .method-grid { gap: 12px; }
+  .method-card { padding: 16px 18px; }
+  .method-card h3 {
+    font-size: 16px;
+    letter-spacing: 0.2em;
+  }
+  .method-card p { font-size: 13px; line-height: 1.8; }
+
+  /* —— 面包屑 —— */
+  .breadcrumb {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    font-size: 12px;
+    padding: 10px 0;
+  }
+
+  /* —— 翻页 —— */
+  .pager {
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 56px;
+    padding-top: 24px;
+  }
+  .pager a {
+    padding: 14px 18px;
+    font-size: 14px;
+    letter-spacing: 0.1em;
+  }
+  .pager a.next { text-align: left; }
+  .pager a small {
+    font-size: 10px;
+    letter-spacing: 0.25em;
+  }
+
+  /* —— 页脚 —— */
+  .site-footer {
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    padding: 32px 0 12px;
+  }
+  .site-footer .small { font-size: 10px; }
+
+  /* —— SVG 配图自适应 —— */
+  .illustration svg {
+    width: 100%;
+    height: auto;
+  }
+  .illustration .caption {
+    font-size: 12px;
+    letter-spacing: 0.2em;
+  }
+
+  /* —— 分割线工具类 —— */
+  .mt-32 { margin-top: 24px; }
+  .mt-48 { margin-top: 32px; }
+}
+
+/* —— 小屏手机（< 380px，如 iPhone SE 竖屏） —— */
+@media (max-width: 380px) {
+  .container { padding: 16px 12px 48px; }
+  .title-cn { font-size: 32px; letter-spacing: 0.25em; }
+  .hero-name { font-size: 56px; }
+  .trigram.huge .yao { width: 120px; height: 14px; }
+  .trigram.large .yao { width: 80px; height: 10px; }
+  .classic-text { font-size: 16px; padding: 18px 14px; }
+  .section-title { font-size: 20px; }
+  .reflection .q { font-size: 15px; }
+  .commentary-card { padding: 16px 14px; }
+  .story { padding: 20px 14px; }
+}
+
