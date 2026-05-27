@@ -203,6 +203,25 @@ html, body {
   font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Heiti SC", "WenQuanYi Micro Hei", sans-serif;
 }
 
+/* 已学完的卦 */
+.bagua-card.done {
+  background: var(--paper-light);
+  border: 1px solid var(--bronze-light);
+}
+.bagua-card.done::after {
+  content: "✓";
+  position: absolute;
+  top: -8px; right: -8px;
+  background: var(--bronze);
+  color: #fff5e6;
+  width: 22px; height: 22px;
+  border-radius: 50%;
+  font-size: 13px;
+  line-height: 22px;
+  text-align: center;
+}
+.bagua-card.done .name { color: var(--bronze); }
+
 /* ====== 六十四卦九宫 ====== */
 .hex-grid {
   display: grid;
