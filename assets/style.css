@@ -1,0 +1,841 @@
+/* ===========================================
+   易经研习 · 古典雅致主题
+   配色：宣纸 / 墨黑 / 印章红 / 古铜
+   =========================================== */
+
+:root {
+  --paper: #f3e7cf;            /* 宣纸底 */
+  --paper-deep: #e8d9b8;       /* 深宣纸 */
+  --paper-light: #f9f1de;      /* 浅宣纸 */
+  --ink: #2b2520;              /* 墨色 */
+  --ink-light: #5a4d42;        /* 淡墨 */
+  --seal-red: #a93226;         /* 印章红 */
+  --seal-red-deep: #7b241c;    /* 朱砂深 */
+  --bronze: #8b6f47;           /* 古铜 */
+  --bronze-light: #c8a878;     /* 浅铜 */
+  --line: #d4b88a;             /* 线条色 */
+  --yang: #2b2520;             /* 阳爻：墨 */
+  --yin-gap: var(--paper);     /* 阴爻断口 */
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Heiti SC", "WenQuanYi Micro Hei", sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.85;
+  letter-spacing: 0.04em;
+  -webkit-font-smoothing: antialiased;
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(139,111,71,0.06) 0%, transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(169,50,38,0.04) 0%, transparent 40%),
+    repeating-linear-gradient(90deg, transparent 0 24px, rgba(139,111,71,0.025) 24px 25px);
+}
+
+/* ====== 容器 ====== */
+.container {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 48px 32px 96px;
+}
+
+/* ====== 头部 ====== */
+.site-header {
+  text-align: center;
+  padding: 48px 0 32px;
+  border-bottom: 1px double var(--line);
+  position: relative;
+}
+.site-header::after {
+  content: "";
+  position: absolute;
+  left: 50%; bottom: -7px;
+  width: 12px; height: 12px;
+  background: var(--seal-red);
+  transform: translateX(-50%) rotate(45deg);
+}
+
+.title-cn {
+  font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Heiti SC", "WenQuanYi Micro Hei", sans-serif;
+  font-size: 56px;
+  font-weight: 400;
+  color: var(--ink);
+  letter-spacing: 0.4em;
+  margin-left: 0.4em;
+  text-shadow: 1px 1px 0 rgba(0,0,0,0.05);
+}
+.title-en {
+  font-family: "Georgia", serif;
+  font-size: 13px;
+  color: var(--ink-light);
+  letter-spacing: 0.5em;
+  margin-top: 12px;
+  text-transform: uppercase;
+}
+.subtitle {
+  font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Heiti SC", "WenQuanYi Micro Hei", sans-serif;
+  color: var(--bronze);
+  margin-top: 18px;
+  font-size: 16px;
+  letter-spacing: 0.3em;
+}
+
+/* 印章 */
+.seal {
+  display: inline-block;
+  background: var(--seal-red);
+  color: #fff5e6;
+  font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Heiti SC", "WenQuanYi Micro Hei", sans-serif;
+  padding: 6px 12px;
+  font-size: 18px;
+  letter-spacing: 0.3em;
+  border: 2px solid var(--seal-red-deep);
+  box-shadow: 0 0 0 1px var(--seal-red), 1px 1px 4px rgba(0,0,0,0.15);
+  transform: rotate(-3deg);
+  margin: 12px 4px;
+}
+
+/* ====== 导航条 ====== */
+.breadcrumb {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 0;
+  margin-top: 24px;
+  font-size: 14px;
+  color: var(--ink-light);
+  border-bottom: 1px solid var(--line);
+}
+.breadcrumb a { color: var(--bronze); text-decoration: none; border-bottom: 1px dashed transparent; }
+.breadcrumb a:hover { border-bottom-color: var(--bronze); color: var(--seal-red); }
+
+/* ====== 章节标题 ====== */
+.section-title {
+  font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Heiti SC", "WenQuanYi Micro Hei", sans-serif;
+  font-size: 32px;
+  text-align: center;
+  margin: 64px 0 32px;
+  color: var(--ink);
+  position: relative;
+}
+.section-title::before, .section-title::after {
+  content: "";
+  display: inline-block;
+  width: 60px;
+  height: 1px;
+  background: var(--bronze);
+  vertical-align: middle;
+  margin: 0 24px;
+}
+
+.section-intro {
+  text-align: center;
+  color: var(--ink-light);
+  font-size: 15px;
+  max-width: 700px;
+  margin: 0 auto 40px;
+  font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Heiti SC", "WenQuanYi Micro Hei", sans-serif;
+  letter-spacing: 0.15em;
+}
+
+/* ====== 八卦卡片网格 ====== */
+.bagua-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-bottom: 32px;
+}
+@media (max-width: 720px) { .bagua-grid { grid-template-columns: repeat(2, 1fr); } }
+
+.bagua-card {
+  background: var(--paper-light);
+  border: 1px solid var(--line);
+  padding: 24px 16px;
+  text-align: center;
+  text-decoration: none;
+  color: var(--ink);
+  position: relative;
+  transition: all 0.3s ease;
+  box-shadow: 2px 2px 0 var(--paper-deep);
+}
+.bagua-card:hover {
+  background: #fff8e7;
+  border-color: var(--seal-red);
+  transform: translate(-2px, -2px);
+  box-shadow: 4px 4px 0 var(--bronze-light);
+}
+.bagua-card .lesson-num {
+  position: absolute;
+  top: 8px; left: 8px;
+  font-size: 11px;
+  color: var(--bronze);
+  font-family: Georgia, serif;
+}
+.bagua-card .trigram {
+  margin: 8px auto 12px;
+}
+.bagua-card .name {
+  font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Heiti SC", "WenQuanYi Micro Hei", sans-serif;
+  font-size: 22px;
+  color: var(--seal-red);
+  letter-spacing: 0.3em;
+  margin-bottom: 4px;
+}
+.bagua-card .nature {
+  font-size: 13px;
+  color: var(--ink-light);
+  letter-spacing: 0.2em;
+}
+.bagua-card.locked { opacity: 0.55; cursor: not-allowed; }
+.bagua-card.locked:hover { transform: none; background: var(--paper-light); border-color: var(--line); box-shadow: 2px 2px 0 var(--paper-deep); }
+.bagua-card.current { border: 2px solid var(--seal-red); box-shadow: 4px 4px 0 var(--seal-red-deep); }
+.bagua-card.current::after {
+  content: "今";
+  position: absolute;
+  top: -10px; right: -10px;
+  background: var(--seal-red);
+  color: #fff5e6;
+  width: 24px; height: 24px;
+  border-radius: 50%;
+  font-size: 13px;
+  line-height: 24px;
+  font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Heiti SC", "WenQuanYi Micro Hei", sans-serif;
+}
+
+/* ====== 六十四卦九宫 ====== */
+.hex-grid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 6px;
+  margin: 24px 0;
+}
+@media (max-width: 720px) { .hex-grid { grid-template-columns: repeat(4, 1fr); } }
+
+.hex-cell {
+  aspect-ratio: 1 / 1.1;
+  background: var(--paper-light);
+  border: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: var(--ink);
+  font-size: 12px;
+  transition: all 0.2s;
+  padding: 4px;
+}
+.hex-cell:hover { background: #fff8e7; border-color: var(--seal-red); }
+.hex-cell .h-num { color: var(--bronze); font-family: Georgia, serif; font-size: 10px; }
+.hex-cell .h-symbol { font-size: 22px; line-height: 1; margin: 4px 0; color: var(--ink); }
+.hex-cell .h-name { font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Heiti SC", "WenQuanYi Micro Hei", sans-serif; letter-spacing: 0.1em; font-size: 11px; color: var(--ink); }
+.hex-cell.locked { opacity: 0.35; pointer-events: none; }
+
+/* ====== 进度条 ====== */
+.progress-wrap {
+  background: var(--paper-deep);
+  height: 8px;
+  border-radius: 0;
+  margin: 16px 0 8px;
+  border: 1px solid var(--line);
+  position: relative;
+  overflow: hidden;
+}
+.progress-bar {
+  background: linear-gradient(90deg, var(--seal-red), var(--bronze));
+  height: 100%;
+}
+.progress-text {
+  text-align: right;
+  font-size: 12px;
+  color: var(--ink-light);
+  font-family: Georgia, serif;
+  letter-spacing: 0.1em;
+}
+
+/* ====== 课程页：卦象大图区 ====== */
+.hero {
+  text-align: center;
+  padding: 64px 0 48px;
+  border-bottom: 1px double var(--line);
+  position: relative;
+}
+.hero-lesson {
+  font-family: Georgia, serif;
+  color: var(--bronze);
+  letter-spacing: 0.4em;
+  font-size: 12px;
+  margin-bottom: 16px;
+}
+.hero-name {
+  font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Heiti SC", "WenQuanYi Micro Hei", sans-serif;
+  font-size: 96px;
+  color: var(--ink);
+  letter-spacing: 0.2em;
+  margin-left: 0.2em;
+  line-height: 1;
+}
+.hero-pin {
+  font-size: 18px;
+  color: var(--ink-light);
+  margin-top: 16px;
+  letter-spacing: 0.5em;
+  font-family: Georgia, serif;
+}
+.hero-meta {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  margin-top: 32px;
+  font-size: 14px;
+  color: var(--ink-light);
+  letter-spacing: 0.2em;
+}
+.hero-meta span strong {
+  color: var(--seal-red);
+  font-weight: normal;
+  margin-left: 6px;
+}
+
+/* ====== 卦象（爻线） ====== */
+/* 三爻卦 trigram */
+.trigram {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 6px 0;
+}
+.trigram.large { gap: 10px; padding: 12px 0; }
+.trigram.huge  { gap: 14px; padding: 16px 0; }
+
+.yao {
+  width: 80px;
+  height: 10px;
+  background: var(--yang);
+  border-radius: 1px;
+}
+.trigram.large .yao { width: 140px; height: 16px; }
+.trigram.huge  .yao { width: 200px; height: 22px; }
+
+.yao.yin {
+  background:
+    linear-gradient(90deg, var(--yang) 0 42%, var(--paper) 42% 58%, var(--yang) 58% 100%);
+}
+
+/* ====== 内容章节 ====== */
+.chapter {
+  margin: 56px 0;
+}
+.chapter-head {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--ink);
+  margin-bottom: 28px;
+}
+.chapter-head .ch-num {
+  font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Heiti SC", "WenQuanYi Micro Hei", sans-serif;
+  font-size: 28px;
+  color: var(--seal-red);
+}
+.chapter-head .ch-title {
+  font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Heiti SC", "WenQuanYi Micro Hei", sans-serif;
+  font-size: 24px;
+  color: var(--ink);
+  letter-spacing: 0.2em;
+}
+.chapter-head .ch-en {
+  margin-left: auto;
+  font-family: Georgia, serif;
+  font-size: 12px;
+  color: var(--bronze);
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+}
+
+/* 原文卡 */
+.classic-text {
+  background: var(--paper-light);
+  border-left: 4px solid var(--seal-red);
+  padding: 28px 32px;
+  font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Heiti SC", "WenQuanYi Micro Hei", sans-serif;
+  font-size: 22px;
+  line-height: 2.2;
+  letter-spacing: 0.2em;
+  color: var(--ink);
+  position: relative;
+}
+.classic-text::before {
+  content: "「";
+  position: absolute;
+  top: -8px; left: 8px;
+  font-size: 40px;
+  color: var(--seal-red);
+  opacity: 0.6;
+}
+.classic-text .source {
+  display: block;
+  text-align: right;
+  font-size: 13px;
+  color: var(--bronze);
+  letter-spacing: 0.3em;
+  margin-top: 16px;
+  font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Heiti SC", "WenQuanYi Micro Hei", sans-serif;
+}
+
+/* 注家 */
+.commentary {
+  display: grid;
+  gap: 20px;
+  margin-top: 8px;
+}
+.commentary-card {
+  background: linear-gradient(180deg, var(--paper-light), var(--paper));
+  border: 1px solid var(--line);
+  padding: 24px 28px;
+  position: relative;
+}
+.commentary-card .author {
+  display: inline-block;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Heiti SC", "WenQuanYi Micro Hei", sans-serif;
+  padding: 4px 14px;
+  font-size: 14px;
+  letter-spacing: 0.2em;
+  margin-bottom: 14px;
+}
+.commentary-card .author.wang { background: #4a5d4a; }
+.commentary-card .author.cheng { background: #5d4a3d; }
+.commentary-card .author.zhu { background: var(--seal-red-deep); }
+.commentary-card .author.nan { background: var(--bronze); }
+.commentary-card .author small {
+  font-size: 11px;
+  margin-left: 8px;
+  opacity: 0.85;
+  letter-spacing: 0.1em;
+}
+.commentary-card p {
+  font-size: 15.5px;
+  color: var(--ink);
+  margin-bottom: 10px;
+}
+.commentary-card p:last-child { margin-bottom: 0; }
+.commentary-card .quote {
+  font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Heiti SC", "WenQuanYi Micro Hei", sans-serif;
+  background: rgba(169,50,38,0.06);
+  border-left: 3px solid var(--bronze-light);
+  padding: 10px 16px;
+  margin: 10px 0;
+  color: var(--ink-light);
+  font-size: 15px;
+  letter-spacing: 0.15em;
+}
+
+/* 故事 */
+.story {
+  background: var(--paper-light);
+  border: 1px solid var(--line);
+  padding: 32px 36px;
+  position: relative;
+}
+.story::before, .story::after {
+  content: "";
+  position: absolute;
+  width: 24px; height: 24px;
+  border: 2px solid var(--seal-red);
+}
+.story::before { top: 8px; left: 8px; border-right: 0; border-bottom: 0; }
+.story::after  { bottom: 8px; right: 8px; border-left: 0; border-top: 0; }
+
+.story h4 {
+  font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Heiti SC", "WenQuanYi Micro Hei", sans-serif;
+  font-size: 22px;
+  color: var(--seal-red);
+  margin-bottom: 8px;
+  letter-spacing: 0.2em;
+}
+.story .era {
+  font-size: 13px;
+  color: var(--bronze);
+  letter-spacing: 0.3em;
+  margin-bottom: 20px;
+  font-family: Georgia, serif;
+}
+.story p {
+  font-size: 15.5px;
+  margin-bottom: 14px;
+  color: var(--ink);
+  text-indent: 2em;
+}
+.story .moral {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px dashed var(--line);
+  font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Heiti SC", "WenQuanYi Micro Hei", sans-serif;
+  color: var(--seal-red);
+  text-indent: 0;
+  letter-spacing: 0.15em;
+}
+
+/* 应用 */
+.application ul {
+  list-style: none;
+  display: grid;
+  gap: 14px;
+}
+.application li {
+  background: var(--paper-light);
+  border-left: 3px solid var(--bronze);
+  padding: 14px 20px;
+  font-size: 15px;
+}
+.application li strong {
+  color: var(--seal-red);
+  font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Heiti SC", "WenQuanYi Micro Hei", sans-serif;
+  margin-right: 8px;
+  letter-spacing: 0.2em;
+}
+
+/* SVG插图区 */
+.illustration {
+  margin: 24px auto;
+  text-align: center;
+}
+.illustration svg { max-width: 100%; height: auto; }
+.illustration .caption {
+  font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Heiti SC", "WenQuanYi Micro Hei", sans-serif;
+  font-size: 13px;
+  color: var(--ink-light);
+  letter-spacing: 0.3em;
+  margin-top: 8px;
+}
+
+/* 属性表 */
+.attr-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0;
+  font-size: 15px;
+}
+.attr-table th, .attr-table td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid var(--line);
+}
+.attr-table th {
+  font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Heiti SC", "WenQuanYi Micro Hei", sans-serif;
+  color: var(--seal-red);
+  letter-spacing: 0.2em;
+  width: 30%;
+  background: var(--paper-light);
+}
+.attr-table td {
+  color: var(--ink);
+}
+
+/* 翻页 */
+.pager {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 80px;
+  padding-top: 32px;
+  border-top: 1px double var(--line);
+  gap: 16px;
+}
+.pager a {
+  flex: 1;
+  background: var(--paper-light);
+  border: 1px solid var(--line);
+  padding: 18px 24px;
+  text-decoration: none;
+  color: var(--ink);
+  transition: all 0.2s;
+  font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Heiti SC", "WenQuanYi Micro Hei", sans-serif;
+  letter-spacing: 0.15em;
+}
+.pager a:hover {
+  border-color: var(--seal-red);
+  background: #fff8e7;
+}
+.pager a.next { text-align: right; }
+.pager a small {
+  display: block;
+  font-size: 11px;
+  color: var(--bronze);
+  letter-spacing: 0.3em;
+  margin-bottom: 4px;
+  font-family: Georgia, serif;
+}
+.pager a.disabled { opacity: 0.4; pointer-events: none; }
+
+/* 页脚 */
+.site-footer {
+  text-align: center;
+  padding: 48px 0 16px;
+  margin-top: 48px;
+  border-top: 1px solid var(--line);
+  font-size: 12px;
+  color: var(--ink-light);
+  letter-spacing: 0.3em;
+  font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Heiti SC", "WenQuanYi Micro Hei", sans-serif;
+}
+.site-footer .small {
+  font-family: Georgia, serif;
+  letter-spacing: 0.2em;
+  margin-top: 8px;
+  opacity: 0.7;
+}
+
+/* 通用 */
+p { font-size: 16px; margin-bottom: 14px; }
+.muted { color: var(--ink-light); }
+.center { text-align: center; }
+.divider {
+  text-align: center;
+  margin: 32px 0;
+  color: var(--bronze);
+  letter-spacing: 1em;
+}
+
+/* ====== 工具类（替代内联样式） ====== */
+.mt-32 { margin-top: 32px; }
+.mt-48 { margin-top: 48px; }
+.mb-24 { margin-bottom: 24px; }
+
+.intro-poem {
+  text-align: center;
+  font-size: 17px;
+  color: var(--ink-light);
+  letter-spacing: 0.18em;
+  line-height: 2.1;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.progress-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-top: 8px;
+}
+.progress-row .label {
+  font-size: 15px;
+  color: var(--bronze);
+  letter-spacing: 0.3em;
+}
+
+/* 研习之法卡片 */
+.method-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 16px;
+}
+@media (max-width: 720px) { .method-grid { grid-template-columns: 1fr; } }
+.method-card {
+  background: var(--paper-light);
+  border: 1px solid var(--line);
+  padding: 22px 24px;
+}
+.method-card h3 {
+  color: var(--seal-red);
+  font-size: 19px;
+  margin-bottom: 8px;
+  letter-spacing: 0.25em;
+  font-weight: 500;
+}
+.method-card p {
+  font-size: 14px;
+  color: var(--ink-light);
+  margin: 0;
+}
+
+/* 卦象示意 + 爻位说明 */
+.symbol-explain {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 36px;
+  align-items: center;
+}
+@media (max-width: 720px) { .symbol-explain { grid-template-columns: 1fr; } }
+
+.symbol-box {
+  text-align: center;
+  background: var(--paper-light);
+  padding: 32px 20px;
+  border: 1px solid var(--line);
+}
+.symbol-box .name {
+  margin-top: 18px;
+  color: var(--seal-red);
+  letter-spacing: 0.3em;
+  font-size: 18px;
+}
+
+/* 爻位标注（在卦象旁的"上爻/中爻/初爻"） */
+.yao-anno {
+  position: absolute;
+  right: -52px;
+  top: -3px;
+  color: var(--bronze);
+  font-size: 13px;
+  letter-spacing: 0.1em;
+}
+
+/* 三才之道：三层卡片 */
+.three-powers {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+  margin-top: 28px;
+}
+.tp-row {
+  display: grid;
+  grid-template-columns: 80px 130px 1fr;
+  align-items: center;
+  background: var(--paper-light);
+  border: 1px solid var(--line);
+  padding: 18px 22px;
+  gap: 18px;
+}
+@media (max-width: 720px) {
+  .tp-row { grid-template-columns: 1fr; gap: 8px; }
+}
+.tp-row .tp-label {
+  color: var(--seal-red);
+  font-size: 22px;
+  letter-spacing: 0.3em;
+  font-weight: 500;
+}
+.tp-row .tp-sub {
+  font-size: 12px;
+  color: var(--bronze);
+  letter-spacing: 0.25em;
+  display: block;
+  margin-top: 4px;
+  font-weight: 400;
+}
+.tp-row .tp-yao .yao {
+  width: 110px;
+  height: 12px;
+}
+.tp-row .tp-text {
+  font-size: 15px;
+  color: var(--ink);
+}
+.tp-row .tp-text em {
+  font-style: normal;
+  color: var(--seal-red);
+}
+
+/* 六龙之象：六行 */
+.six-dragons {
+  display: grid;
+  gap: 14px;
+  margin-top: 24px;
+}
+.dragon-row {
+  display: grid;
+  grid-template-columns: 86px 1fr;
+  background: var(--paper-light);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--seal-red);
+  overflow: hidden;
+}
+@media (max-width: 720px) {
+  .dragon-row { grid-template-columns: 1fr; }
+}
+.dragon-row .dr-pos {
+  background: var(--ink);
+  color: var(--paper);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 14px;
+  letter-spacing: 0.15em;
+}
+.dragon-row .dr-pos .num {
+  font-size: 18px;
+  font-weight: 500;
+}
+.dragon-row .dr-pos .layer {
+  font-size: 11px;
+  color: var(--bronze-light);
+  margin-top: 4px;
+  letter-spacing: 0.2em;
+}
+.dragon-row .dr-body {
+  padding: 18px 24px;
+}
+.dragon-row .dr-yao {
+  font-size: 16px;
+  letter-spacing: 0.18em;
+  color: var(--seal-red);
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+.dragon-row .dr-meaning {
+  font-size: 14.5px;
+  color: var(--ink);
+  margin-bottom: 8px;
+  line-height: 1.85;
+}
+.dragon-row .dr-story {
+  font-size: 14px;
+  color: var(--ink-light);
+  background: rgba(139,111,71,0.07);
+  border-left: 2px solid var(--bronze-light);
+  padding: 8px 14px;
+  margin-top: 8px;
+  line-height: 1.8;
+}
+.dragon-row .dr-story strong {
+  color: var(--seal-red-deep);
+  letter-spacing: 0.1em;
+}
+
+/* 反观题 */
+.reflection {
+  background: var(--paper-light);
+  border: 2px dashed var(--bronze);
+  padding: 32px 36px;
+  text-align: center;
+}
+.reflection .q {
+  font-size: 21px;
+  color: var(--seal-red);
+  letter-spacing: 0.25em;
+  line-height: 2;
+  margin-bottom: 14px;
+}
+.reflection .a {
+  font-size: 14px;
+  color: var(--ink-light);
+  letter-spacing: 0.2em;
+}
+
+/* Hero meta 在窄屏要换行 */
+.hero-meta { flex-wrap: wrap; row-gap: 12px; }
+
+/* 内嵌引用块（统一替代之前散落在内联 style 里的 .quote） */
+.inline-quote {
+  background: rgba(169,50,38,0.06);
+  border-left: 3px solid var(--bronze-light);
+  padding: 10px 18px;
+  margin: 12px 0;
+  color: var(--ink-light);
+  font-size: 15px;
+  letter-spacing: 0.15em;
+}
+
+/* 爻位明细的多行文字 */
+.lead-list {
+  font-size: 16px;
+  line-height: 2;
+}
+.lead-list strong { color: var(--seal-red); font-weight: 500; }
+
