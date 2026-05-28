@@ -70,8 +70,8 @@ SITE_URL="https://yijing.xxcode.work"
 |---|---|---|---|
 | 1 | 乾 ☰ | `bagua/01-qian.html` | ✅ 已完成 |
 | 2 | 坤 ☷ | `bagua/02-kun.html` | ✅ 已完成 |
-| 3 | 震 ☳ | `bagua/03-zhen.html` | ⏳ **下一课** |
-| 4 | 巽 ☴ | `bagua/04-xun.html` | 待开 |
+| 3 | 震 ☳ | `bagua/03-zhen.html` | ✅ 已完成 |
+| 4 | 巽 ☴ | `bagua/04-xun.html` | ⏳ **下一课** |
 | 5 | 坎 ☵ | `bagua/05-kan.html` | 待开 |
 | 6 | 离 ☲ | `bagua/06-li.html` | 待开 |
 | 7 | 艮 ☶ | `bagua/07-gen.html` | 待开 |
@@ -230,4 +230,4 @@ PYEOF
 
 ---
 
-最后更新：2026-05-27（完成乾、坤两课 + 移动端适配 + 部署上线）
+最后更新：2026-05-28（完成第三课 · 震／雷 · 越王勾践卧薪尝胆）
