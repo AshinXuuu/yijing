@@ -72,8 +72,8 @@ SITE_URL="https://yijing.xxcode.work"
 | 2 | 坤 ☷ | `bagua/02-kun.html` | ✅ 已完成 |
 | 3 | 震 ☳ | `bagua/03-zhen.html` | ✅ 已完成 |
 | 4 | 巽 ☴ | `bagua/04-xun.html` | ✅ 已完成 |
-| 5 | 坎 ☵ | `bagua/05-kan.html` | ⏳ **下一课** |
-| 6 | 离 ☲ | `bagua/06-li.html` | 待开 |
+| 5 | 坎 ☵ | `bagua/05-kan.html` | ✅ 已完成 |
+| 6 | 离 ☲ | `bagua/06-li.html` | ⏳ **下一课** |
 | 7 | 艮 ☶ | `bagua/07-gen.html` | 待开 |
 | 8 | 兑 ☱ | `bagua/08-dui.html` | 待开 |
 | 9–72 | 六十四卦 | `hexagrams/01-qian.html` 起 | 待开 |
@@ -230,4 +230,4 @@ PYEOF
 
 ---
 
-最后更新：2026-05-28（完成第四课 · 巽／风 · 留侯张良运筹帷幄）
+最后更新：2026-05-29（完成第五课 · 坎／水 · 太史公司马迁忍辱著《史记》）
