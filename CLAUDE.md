@@ -256,6 +256,20 @@ PYEOF
 
 ---
 
+## 七点五、小程序数据构建（mp/ · 2026-07-17 新增）
+
+本站内容同时供微信小程序「国学经典深解」（AppID wx61619c77e1b84188，项目在 `~/Desktop/国学经典深解/`）动态拉取。`mp/` 目录是构建产物（JSON + PNG + 字体），随本仓库一起 git 部署，URL 前缀 `https://yijing.xxcode.work/mp/`。
+
+**每生成一课后，除原有四件事外，第五件事：重建 mp 数据**
+
+```bash
+python3 ~/Desktop/国学经典深解/tools/build_data.py --src "/Users/ashin/Desktop/日报/知识/易经"
+# 生僻字较多时可顺带重建字体子集：
+python3 ~/Desktop/国学经典深解/tools/build_font.py --mp "/Users/ashin/Desktop/日报/知识/易经/mp"
+```
+
+（在 Cowork/沙盒会话中运行时路径换成挂载路径；沙盒已具备 bs4/cairosvg/fontTools 依赖，Mac 首次需 `pip3 install beautifulsoup4 cairosvg fontTools brotli` + `brew install cairo`。）然后照常 `./deploy.sh`，小程序端即时生效、无需发版。脚本幂等，全量重扫，勿手工改 mp/ 下任何文件。
+
 ## 八、用户偏好（实测得出）
 
 - 喜欢**深度内容**，不要浅尝辄止——爻位、三才、历史典故要展开
