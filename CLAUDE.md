@@ -272,6 +272,8 @@ python3 ~/Desktop/国学经典深解/tools/build_font.py --mp "/Users/ashin/Desk
 
 （在 Cowork/沙盒会话中运行时路径换成挂载路径；沙盒已具备 bs4/cairosvg/fontTools 依赖，Mac 首次需 `pip3 install beautifulsoup4 cairosvg fontTools brotli` + `brew install cairo`。）然后照常 `./deploy.sh`，小程序端即时生效、无需发版。脚本幂等，全量重扫，勿手工改 mp/ 下任何文件。
 
+⚠️ **正文禁夹英文残词**：生成新课 HTML 时正文严禁夹带英文单词（此前出现过 every/observe/denied/translate/just do it/force/records/administration 等生成残词，已全部修复）。build_data.py 会扫描并告警，出现告警必须修源 HTML。英文仅允许出现在 ch-en 章节标签、hero-pin 拼音行、面包屑、页脚——这些在小程序构建时会被自动剔除，网站端保留不受影响。
+
 ## 八、用户偏好（实测得出）
 
 - 喜欢**深度内容**，不要浅尝辄止——爻位、三才、历史典故要展开
