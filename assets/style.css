@@ -1246,3 +1246,95 @@ p { font-size: 16px; margin-bottom: 14px; }
   .story { padding: 20px 14px; }
 }
 
+/* =====================================================
+   书库门户（两本书入口）
+   ===================================================== */
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+  margin-top: 40px;
+}
+@media (max-width: 720px) { .book-grid { grid-template-columns: 1fr; } }
+
+.book-card {
+  display: block;
+  background: var(--paper-light);
+  border: 1px solid var(--line);
+  padding: 44px 32px 36px;
+  text-align: center;
+  text-decoration: none;
+  color: var(--ink);
+  position: relative;
+  transition: all 0.3s ease;
+  box-shadow: 3px 3px 0 var(--paper-deep);
+}
+.book-card:hover {
+  background: #fff8e7;
+  border-color: var(--seal-red);
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0 var(--bronze-light);
+}
+.book-card .book-mark {
+  font-size: 52px;
+  line-height: 1;
+  color: var(--seal-red);
+}
+.book-card .book-title {
+  font-size: 34px;
+  color: var(--ink);
+  letter-spacing: 0.35em;
+  margin-left: 0.35em;
+  margin-top: 18px;
+}
+.book-card .book-en {
+  font-family: Georgia, serif;
+  font-size: 12px;
+  color: var(--bronze);
+  letter-spacing: 0.32em;
+  margin-top: 10px;
+  text-transform: uppercase;
+}
+.book-card .book-desc {
+  font-size: 14.5px;
+  color: var(--ink-light);
+  letter-spacing: 0.1em;
+  line-height: 1.9;
+  margin-top: 18px;
+}
+.book-card .book-progress {
+  margin: 22px auto 0;
+  max-width: 300px;
+}
+.book-card .book-status {
+  display: inline-block;
+  margin-top: 20px;
+  font-size: 13px;
+  letter-spacing: 0.25em;
+  padding: 5px 16px;
+  border: 1px solid var(--bronze-light);
+  color: var(--bronze);
+}
+.book-card.done .book-status {
+  background: var(--bronze);
+  color: #fff5e6;
+  border-color: var(--bronze);
+}
+.book-card.done .book-mark { color: var(--bronze); }
+.book-card.current .book-status {
+  background: var(--seal-red);
+  color: #fff5e6;
+  border-color: var(--seal-red-deep);
+}
+
+/* 章节格（道德经八十一章）状态 */
+.hex-cell.done {
+  border-color: var(--bronze-light);
+}
+.hex-cell.done .h-symbol { color: var(--bronze); }
+.hex-cell.current {
+  border: 2px solid var(--seal-red);
+  box-shadow: 3px 3px 0 var(--seal-red-deep);
+}
+.hex-cell.current .h-symbol { color: var(--seal-red); }
+
